@@ -1,0 +1,31 @@
+3A:
+No, since she says that X 0.56s is O(n^2), and Y 0.86s is O(n log n), she has to be wrong. Because O(n log n) is a much faster processing time than O(n^2).
+O(n^2) implies that the whole array is iterated completely for every single index of the array. O(n log N) implies that for every step the array is instead cut in half. Looking for 25 in a BST? Root is 50, we go left, and cut the right half away. Current is 10, we go right, and cut left half away. Current is 20, we go right, and cut left half away. We find 25. It's plain to see, that O(n log n) is faster than O(n^2). Unless of course I've misunderstood, but I don't think so.
+For an algorithm which sorts using an O(n^2) speed, the time it takes to sort increases in a very steep way(since the workload is added to in a duplicating way).
+For an algorithm which sorts using an algorithm wth O(n log n) speed, the time it takes to sort instead decreases, as for every sorting computation, the workload is cut in half.
+The statements above of course relate to percentage time. O(n log n) won't sort 2000 elements faster than it sorts 1000. But, if say it would take 1sec to sort each and every one of 1000 elements, amounting to 1000secs, then it would take maybe 1500sec to sort 2000(but I don't know how to count it, so that's just a random guess number).
+For O(n^2) it would take 1000*1000(1000,000)secs to sort 1000 elements, but for 2000 it would take 2000*2000(4000,000)secs. For 4000 it would take 4000*4000(16,000,000)secs. Very steep workload incrementation.
+Considering how close to each other in efficiency the both algorithms are, they should reasonably be more equal to each other in their O() efficiency.
+Maybe, considering the small input values, X could be O(n log n), while Y is O(n). 
+
+
+3B:
+The algorithm iterates through every index of the array, this is equal to O(n). But for every iteration, the algorithm also checks whether the current value exists in some other index position. This equals to an additional O(n), as indexOf() is not set to start from a specific position, but instead moves, potentially, through the whole array. 
+Therefore, it seems to me, that the reasonable conclusion to be drawn, is that the algorithm's speed-efficiency is equal to O(n^2).
+
+
+3C:
+The Set interfaces share some common properties:
+It's not possible to add the same value twice to them. If you try to add '1' two times, the second attempt will be ignored.
+The sets also allow for faster processing of elements, than most(all?) other datastructures. HashSet is, if correctly implemented, faster than TreeSet.
+An important distinction to make, when choosing the Set interface to make use of, is that a HashTable won't return the elements in a very orderly order. The elements are placed into the HashTable based upon their HashCode's. The HashCode is a value based upon, for example, the unicode values of a String's characters added into a sum. A modulus is also used in order to determine the appropriate 'bucket' for the current value to be placed in. However, because of this way of placing the elements, one should expect them to not be returned in sorted order.
+For a sorted order, one should perhaps look to the TreeSet instead. In the TreeSet, elements are compared to one another while being inserted. For example:
+We have an int-value of 10 in the root. If we insert 5, it will be sorted to the left. If we insert 11, it will be sorted to the right, and so on. This leads to a sorted order being returned later, if, of course, the method for returning the elements in a sorted order is correctly implemented.
+Consider how to find an integer of 45, in a standard array:
+One has to pass through potentially all of the elements.
+Now consider how to find the integer in:
+#HashSet = ask if HashSet contains 45. 45 is extracted a HashCode. The HashCode leads to a bucket, we search the bucket for the value 45. No need to go through all the indexes of the array.
+#TreeSet = ask if TreeSet contains 45. Root is 20, we go right. Right is 49. We go left. Left is 44, but has no left or right value. No need to loop a whole array for a value which it doesn't contain.
+
+To me it seems that certain disadvantages with the Set's, can be found in the way in which they are constructed:
+They are more technical than, for example, just a simple array. If I place a value into an array, it remains in that position, unless I do something to change that position. If I want a certain value, I just call that index immediately. In a Set, the values move around, for example when a HashSet resizes. But well, I don't know if that matters in the end. If they are faster, this should reasonably come with some kind of trade-off. Intuitively, I'd assume that they are not as stable as a standard array. That they invite more possibilities to get bug's in the code. I also imagine it might be harder to debug problematic code, when the data structures are as technical as the BTS and HashSet are. I would assume that Set's are used in a more specific way, providing functionality for certain kinds of usecase's.

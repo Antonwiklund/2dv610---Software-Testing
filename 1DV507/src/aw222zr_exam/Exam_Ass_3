@@ -1,0 +1,44 @@
+
+Styrande satser:
+'Styrande satser' hänvisar till de följande satserna:
+- if
+- else/if
+- switch
+De används för att avgöra hur ett program ska förhålla sig till diverse data vilken detta program
+kommer i kontakt med. Ifall vi exempelvis vill att programmet ska göra något särskilt då det
+mottar värdet '1', så skriver vi if(data == 1) {gör detta};
+Ifall värdet inte är '1', kan man ha en else-sats, eller flera if/else, att välja bland att utföra istället. 
+
+Iterator:
+En iterator går igenom en kedja av data.
+Den gör detta igenom att avgöra ifall det finns ett nästa element, och om så, även returnera detta element.
+Har man en array, kan man be iteratorn gå igenom denna tills dess den är helt itererad igenom.
+Iteratorn är ett iterativt verktyg, som fyller en funktion liknande den loopar, och främst for-loopen, fyller.
+Den processar helt enkelt en kedja av data och möjliggör manipulation av denna data.
+Iteratorn är, till min vetskap, dock inte en lika universell funktion som loopar, utan är mer specialiserad.   
+
+Bytecode:
+Ingen aning, men gissar:
+Hur olika storleksmått av data som hanteras av maskiner mäts.
+
+Method override:
+Ifall man har en method, och sedan skriver en method som har samma namn, men olika parametrar
+Säg att vi har en method testFunc(){};
+Vi skriver sedan en method testFunc(int[] test){};
+Den ena av dessa methods behöver nu får en @override annotation, så att java(VMaskinen?) ska kunna skilja dem åt.
+Beroende på typen av parameter som används(om någon), kallas olika methoder. 
+
+public void testFunc(){};
+
+@override
+public void testFunc(int[] test){}; 
+
+
+Encapsulation:
+Hänvisar till att isolera delar av program ifrån yttre och oönskad påverkan.
+Detta görs igenom att man bland annat, med hjälp av särskilda definitioner, inkapslar variabler, metoder, klasser o.s.v.
+Det finns flertalet olika sätt att göra detta på. Ett är att använda sig av definitionen 'private', så att t.e.x metoden
+inte kan kallas från utifrån den inkapslande klassen. Metoden kan dock kallas, ifall det finns en referens till klassen,
+och igenom denna referens 'private' klassen kallas.
+Ifall man inte använder sig av inkapsling löper program, alltjämnt det de växer, en större och större risk att 
+utsättas för oönskad påverkan.
