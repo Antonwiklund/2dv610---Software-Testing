@@ -45,6 +45,7 @@ public class TestSuiteOne {
 				break;
 			}
 		}
+		
 		assertEquals(actual, expected);
 	}
 }
