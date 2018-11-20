@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import game.Table;
+
 public class TestSuiteOne {
 
 	@BeforeClass
@@ -19,7 +21,7 @@ public class TestSuiteOne {
 	public static void afterClass() {
 		System.out.println("\nTestsuite completed.");
 	}
-	
+
 	@Before
 	public void setUp() throws Exception {
 		System.out.println("\nTest starts.");
@@ -34,17 +36,15 @@ public class TestSuiteOne {
 	@Test
 	public void checkThatDiceFunctionsCorrectly() {
 		
-		Dice dice = new Dice();
-		
-		int actual = dice.rollDice();
-		int i;
-		
-		for (i = 6; i >= actual; i--) {
-			if (actual == i) {
-				System.out.println("test" + actual + i);
+		Table table = new Table();
+		int actual = table.rollDice();
+		int expected;
+
+		for (expected = 6; expected >= actual; expected--) {
+			if (actual == expected && actual > 0 && actual < 7) {
 				break;
 			}
 		}
-		assertEquals(actual, i);
+		assertEquals(actual, expected);
 	}
 }

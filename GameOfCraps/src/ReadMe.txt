@@ -11,7 +11,7 @@ Awards class =
 #Give best players special prize.
 
 Table class =
-#All functionality for the game itself.
+#All functionality for the game itself - dice etc.
 
 Audience class =
 #Audience can bet on who it thinks will win.
