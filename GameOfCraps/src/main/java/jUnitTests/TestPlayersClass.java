@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import game.Player;
+
 public class TestPlayersClass {
 
 	@BeforeClass
@@ -37,13 +39,13 @@ public class TestPlayersClass {
 	 */
 	@Test
 	public void testAddingPlayers() {
-		Players players = new Players();
-		ArrayList<Players> playersList = new ArrayList<Players>(); 
+		Player player = new Player();
+		ArrayList<Player> playersList = new ArrayList<Player>(); 
 		
-		playersList.add(players.addPlayer());
+		playersList.add(player);
 		
 		Object actual = playersList.get(0);
-		Boolean expected = actual instanceof PlayerObject;
+		Boolean expected = actual instanceof Player;
 		
 		assertTrue(expected);
 	}
