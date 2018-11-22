@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import game.Table;
 
-public class TestSuiteOne {
+public class TestTableClass {
 
 	@BeforeClass
 	public static void beforeClass() {
