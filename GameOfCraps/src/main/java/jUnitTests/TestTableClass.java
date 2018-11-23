@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import game.Player;
 import game.Table;
 
 public class TestTableClass {
@@ -32,10 +33,22 @@ public class TestTableClass {
 		System.out.println("Test finished.");
 	}
 	
+	/*
+	 * Should return an 'int'-array. The length of which, amounts to the total number of players.
+	 */
+	@Test
+	public void shouldReturnNumberOfPlayers() {
+		Table table = new Table();
+		Player[] playersArray = table.welcomeToTable();
+		
+		int actual = playersArray.length; 
+		int expected = 4;
+		assertEquals(actual, expected);
+	}
+	
 	//Dice should return a value from 1-6.
 	@Test
 	public void checkThatDiceFunctionsCorrectly() {
-		
 		Table table = new Table();
 		int actual = table.rollDice();
 		int expected;

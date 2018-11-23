@@ -1,10 +1,9 @@
-Game of Craps
-
 Classes:
 
 Players class = 
-#create object for each player that is going to join. Insert players into array. Make sure array can be bufferoverflowed.
-#add details for players - can't play unless can identify.
+#create object for each player that is going to join.
+#add output related to when players receives awards.
+#playerCurrentResult().
 
 JustForFun class =
 #Provide functionality for croupier to hack the game. The croupier pre-sets the values the dice's will get. 
@@ -18,11 +17,11 @@ Awards class =
 #Give best players special prize.
 
 Table class =
-#importPlayers().
-#playerTurn().
+#importPlayer()
+#playerTurn()
 #playerBet()
-#rollDice().
-#currentStandings().
+#rollDice()
+#currentStandings()
 #wipeTable()
 #gameFinished()
 #printFinalResult()
@@ -34,4 +33,24 @@ Audience class =
 
 Additional implementations:
 #Add choice for playing with Real-time betting(delay between dicethrows)
+#Various multipliers - add money implementation, so players can choose to play with money. Also add currency exchange.
 #Game is not in real life, but played via computer. Each player's input is hid from other players - encapsulate so only player can access.
+
+
+Gameflow - console UI =
+
+#First welcome players to game.
+-Ask how many players.
+-Add the players to the Table(), one at a time.
+
+#After first round:
+-Print results of round.
+-Print current total results.
+-Hand out awards.
+-Ask if new player wants to join, or other player wants to leave.
+
+#After round when one player wins:
+-Print results.
+-Hand out awards.
+-Wipe all info, and System.out 'goodbye'.
+
