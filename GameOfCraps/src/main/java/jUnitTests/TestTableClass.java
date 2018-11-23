@@ -2,6 +2,8 @@ package jUnitTests;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -39,7 +41,13 @@ public class TestTableClass {
 	@Test
 	public void shouldReturnNumberOfPlayers() {
 		Table table = new Table();
-		Player[] playersArray = table.welcomeToTable();
+		Player[] playersArray = null;
+		try {
+			playersArray = table.welcomeToTable();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		int actual = playersArray.length; 
 		int expected = 4;
