@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import game.Player;
 
-public class TestPlayersClass {
+public class TestPlayerClass {
 
 	@BeforeClass
 	public static void beforeClass() {
@@ -48,6 +48,20 @@ public class TestPlayersClass {
 		Boolean expected = actual instanceof Player;
 		
 		assertTrue(expected);
+	}
+	
+	/*
+	 *  Tests that it is possible to add result to the player.
+	 */	
+	@Test
+	public void shouldAddToPlayerCurrentResult() {
+		Player player = new Player();
+		
+		int expected = 5;
+		player.addToResult(expected);
+		int actual = player.getCurrentResult();
+		
+		assertEquals(expected, actual);
 	}
 
 }
