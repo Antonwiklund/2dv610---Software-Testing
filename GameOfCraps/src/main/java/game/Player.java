@@ -7,7 +7,7 @@ public class Player {
 	private String playerFirstName;
 	private String playerLastName;
 	private int playerAge;
-	private int currentResult;
+	private int currentTotalResult;
 	
 	/*
 	 * Constructor which initiates Player class. User enters information about him/herself.
@@ -66,12 +66,18 @@ public class Player {
 		this.playerLastName = lastName;
 	}
 	
+	/*
+	 * Adds player's result to currentTotalResult.
+	 */
 	public void addToResult(int current) {
-		this.currentResult += current;
-		System.out.println(currentResult);
+		this.currentTotalResult += current;
+		System.out.println(currentTotalResult);
 	}
 	
+	/*
+	 * Get player's currentTotalResult.
+	 */
 	public int getCurrentResult() {
-		return currentResult;
+		return currentTotalResult;
 	}
 }
