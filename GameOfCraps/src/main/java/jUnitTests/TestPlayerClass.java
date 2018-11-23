@@ -51,17 +51,17 @@ public class TestPlayerClass {
 	}
 	
 	/*
-	 *  Tests that it is possible to add result to the player.
+	 *  Tests that it is possible to add results to the player.
 	 */	
 	@Test
 	public void shouldAddToPlayerCurrentResult() {
 		Player player = new Player();
-		
 		int expected = 5;
+		player.addToResult(expected);
 		player.addToResult(expected);
 		int actual = player.getCurrentResult();
 		
-		assertEquals(expected, actual);
+		assertEquals(10, actual);
 	}
 
 }
