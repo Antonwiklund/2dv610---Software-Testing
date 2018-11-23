@@ -1,11 +1,11 @@
 'X' after a class or method, means that this functionality has now been implemented.
-'x' after a class or method, means that this functionality is now the next to be implemented.
+'Y' after a class or method, means that this functionality is currently being worked on/planned, in order to be implemented.
 
 Classes:
 
 Players class = 
 #create object for each player that is going to join. X
-#add output related to when players receives awards.
+#add output related to when players receives awards. Y
 #playerCurrentResult(). X
 
 Awards class =
@@ -13,10 +13,10 @@ Awards class =
 #Give best players special prize(should be some kind of object).
 
 Table class =
-#welcomeToTable x - welcome console-UI. Choose how many players that will play. Create array according to this.
-#importPlayer(Player player) x - mock - imports player to the Table, adds into an array.
-#playerTurn() 
-#playerBet() - player places a bet for result of two dice-throws. 
+#welcomeToTable - welcome console-UI. Choose how many players that will play. Create array according to this. X
+#importPlayer(Player player) - mock - imports player to the Table, adds into an array. Y
+#playerTurn() Y
+#playerBet() - player places a bet for result of two dice-throws. Y
 #rollDice() X
 #currentStandings() - loop array and print players results.
 #wipeTable() - last
@@ -36,7 +36,7 @@ JustForFun class =
 #Provide functionality for croupier to hack the game. The croupier pre-sets the values the dices will get. 
 #Hackers enter system to make use of weak points. Steals the awards, and afterwards freezes the system for 10 seconds to get away.
 #Police chase hackers, player gets choice to roll dice and guess number. If correct number is guessed, hackers are caught and awards returned. If wrong system.exit().
-#Harden the system-flaw that allows robbing to occur. Stop bufferoverflow from being possible.
+#Harden the system-flaw that allows hack to occur. Stop bufferoverflow from being possible.
 #If player is of age 100+ and wins three times in a row, has heartattack and dies, and is removed from game.
 
 
