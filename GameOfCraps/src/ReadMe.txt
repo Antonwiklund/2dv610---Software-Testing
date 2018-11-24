@@ -15,15 +15,16 @@ Awards class =
 
 Table class =
 #welcomeToTable - welcome console-UI. Choose how many players that will play. Create array according to this. X
-#importPlayer(Player player) - mock - imports player to the Table, adds into an array. Y
+#importPlayer(Player player) - mock - imports player to the Table, adds into an array. X
+#getPlayerArray() X
 #beginTurn() - the game itself - Y
-#playerBet() - player places a bet for result of two dice-throws. Y
+#playerBet(Player player) - player places a bet for result of two dice-throws. Y
 #rollDice() X
 #currentStandings() - loop array and print players results.
 #wipeTable() - last
 #gameFinished() - last
 #printFinalResult() - last
-#newPlayerJoins(Player player) - can be used for bufferOverFlow
+#newPlayerJoins(Player player) 
 
 Audience class =
 #Audience can bet on who to win. - occurs immediately prior to round begins.

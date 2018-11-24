@@ -61,12 +61,19 @@ public class TestTableClass {
 	 */
 	@Test
 	public void shouldReturnBetValue() {
-		Player player = mock(Player.class);
+		Player player1 = mock(Player.class);
+		Player player2 = mock(Player.class);
 		Table table = new Table();
-		table.placeBets(player);
-		int betsValue = table.getBetsValue();
+		//add player to array:
+		table.importPlayer(player1);
+		table.importPlayer(player2);
+		ArrayList<Player> playerArray = table.getPlayerArray();
+		//send array to loop, for bets to be placed.		
+		table.placeBets(playerArray);
+		int betsValuePlayerOne = table.getBetsValue(playerArray.get(0));
+		int betsValuePlayerTwo = table.getBetsValue(playerArray.get(0));
 		int expected = 21;
-		assertEquals(betsValue, expected);
+		assertEquals(betsValuePlayerOne + betsValuePlayerTwo, expected);
 	}
 	
 	/*
