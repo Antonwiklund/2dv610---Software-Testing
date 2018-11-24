@@ -19,9 +19,8 @@ Players class =
 #Player leaves table - brings awards with him/herself. New player joins.
 
 Awards class =
-#Create award object. Y
-#Add award object to array. Y
-#Calculate what kind of awards that should be given, and to who.
+#Create award object. X
+#Calculate what kind of awards that should be given, and to who. Y
 
 Table class =
 #welcomeToTable - welcome console-UI. Choose how many players that will play. Create array according to this. X
@@ -33,6 +32,7 @@ Table class =
 #Provide players with a result after every round - which is added to a resultArray.
 #currentStandings() - loop resultArray and print players results. Y
 #process awards for round.
+#Add award object to array. Y
 #newPlayerJoins(Player player) 
 #wipeTable() - last
 #gameFinished() - last

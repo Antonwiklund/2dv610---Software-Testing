@@ -32,6 +32,9 @@ public class TestAwardsClass {
 		System.out.println("Test finished.");
 	}
 
+	/*
+	 * should return an 'object' of Award-class.
+	 */
 	@Test
 	public void shouldReturnAwardObject() {
 		Award award = new Award();
