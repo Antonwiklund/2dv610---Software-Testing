@@ -3,6 +3,7 @@ package game;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -87,6 +88,14 @@ public class Table {
 		return numberOfPlayers;
 	}
 
+	ArrayList<Player> playerArray = new ArrayList<Player>();
+	public void importPlayer(Player player) {
+		playerArray.add(player);
+	}
+	
+	public ArrayList<Player> getPlayerArray() {
+		return playerArray;
+	}
 	/*
 	 * Provides an 'int' value from 1-6.
 	 */
