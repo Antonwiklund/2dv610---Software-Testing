@@ -13,10 +13,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import game.Award;
 import game.Player;
 import game.Table;
 
-public class TestTableClass {
+public class TestGamePackage {
 
 	@BeforeClass
 	public static void beforeClass() {
@@ -134,4 +135,52 @@ public class TestTableClass {
 		
 		assertEquals(actual, expected);
 	}
+	
+	//TESTSUITE FOR PLAYERCLASS
+	
+	/*
+	 * Tests that it is possible to add a player to the game. 
+	 */
+	@Test
+	public void testAddingPlayers() {
+		Player player = new Player();
+		ArrayList<Player> playersList = new ArrayList<Player>(); 
+		
+		playersList.add(player);
+		
+		Object actual = playersList.get(0);
+		Boolean expected = actual instanceof Player;
+		
+		assertTrue(expected);
+	}
+	
+	/*
+	 *  Tests that it is possible to add results to the player.
+	 */	
+	@Test
+	public void shouldAddToPlayerCurrentResult() {
+		Player player = new Player();
+		int expected = 5;
+		player.addToResult(expected);
+		player.addToResult(expected);
+		int actual = player.getCurrentResult();
+		
+		assertEquals(10, actual);
+	}
+	
+	//TESTSUITE FOR AWARDCLASS
+	
+	/*
+	 * should return an 'object' of Award-class.
+	 */
+	@Test
+	public void shouldReturnAwardObject() {
+		Award award = new Award();
+		// Create award, and check that it is of the value expected.
+		String actual = award.getValue();
+		String expected = "Horse";
+		
+		assertEquals(actual, expected);
+	}
+
 }

@@ -13,7 +13,6 @@ public class Award {
 		Scanner in = new Scanner(System.in);	
 		System.out.println("Enter, as a string, the type of Award.");
 		this.value = in.nextLine();
-		in.close();
 	}
 	
 	/*
