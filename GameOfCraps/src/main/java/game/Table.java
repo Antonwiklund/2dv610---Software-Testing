@@ -103,8 +103,25 @@ public class Table {
 		}
 		playerArray.add(player);
 	}
-		
 	
+	/*
+	 * allows players to place bets.
+	 */
+	public void placeBets(ArrayList<Player> playerList) {
+		for (int i = 0; i < playerList.size(); i++) {
+			Player currentPlayerToSetBet = playerList.get(i);
+			currentPlayerToSetBet.setBetOne();
+			currentPlayerToSetBet.setBetTwo();
+		}
+	}
+	
+	/*
+	 * allows to return player's bets.
+	 */
+	public int getBetsValue(Player player) {
+		return player.getBetOne() + player.getBetTwo();
+	}
+		
 	/*
 	 * return the playerArray.
 	 */
