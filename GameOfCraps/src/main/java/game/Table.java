@@ -95,7 +95,6 @@ public class Table {
 	 * add player to the playerArray.
 	 * Max 8 players.
 	 */
-	
 	public void importPlayer(Player player) {
 		if (playerArray.size() == 8) {
 			System.out.println("Maximum of 8 players. Game already full.");

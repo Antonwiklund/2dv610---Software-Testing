@@ -83,22 +83,34 @@ public class Player {
 		return currentTotalResult;
 	}
 	
+	/*
+	 * Player sets the bet for first dice.
+	 */
 	public void setBetOne() {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter bet one:");
 		this.betOne = in.nextInt();
 	}
-	
+
+	/*
+	 * Player sets the bet for second dice.
+	 */
 	public void setBetTwo() {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter bet two:");
 		this.betTwo = in.nextInt();
 	}
-	
+
+	/*
+	 * Gets the bet for, chosen players, first dice.
+	 */
 	public int getBetOne() {
 		return betOne;
 	}
-	
+
+	/*
+	 * Gets the bet for, chosen players, second dice.
+	 */
 	public int getBetTwo() {
 		return betTwo;
 	}
