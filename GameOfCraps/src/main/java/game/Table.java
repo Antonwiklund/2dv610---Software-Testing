@@ -88,14 +88,26 @@ public class Table {
 		return numberOfPlayers;
 	}
 
+	/*
+	 * add player to the playerArray.
+	 * Max 8 players.
+	 */
 	ArrayList<Player> playerArray = new ArrayList<Player>();
 	public void importPlayer(Player player) {
+		if (playerArray.size() == 8) {
+			System.out.println("Maximum of 8 players. Game already full.");
+			return; // write separate test.
+		}
 		playerArray.add(player);
 	}
 	
+	/*
+	 * return the playerArray.
+	 */
 	public ArrayList<Player> getPlayerArray() {
 		return playerArray;
 	}
+	
 	/*
 	 * Provides an 'int' value from 1-6.
 	 */
