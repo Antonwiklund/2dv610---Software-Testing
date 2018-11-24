@@ -13,6 +13,9 @@ public class Table {
 
 	}
 
+	// ArrayList for players at table.
+	ArrayList<Player> playerArray = new ArrayList<Player>();
+	
 	/*
 	 * Starts the game. Provides a console-UI, in which it can be chosen how many
 	 * players should play. Also creates a fixed-sized array in response to this.
@@ -92,7 +95,7 @@ public class Table {
 	 * add player to the playerArray.
 	 * Max 8 players.
 	 */
-	ArrayList<Player> playerArray = new ArrayList<Player>();
+	
 	public void importPlayer(Player player) {
 		if (playerArray.size() == 8) {
 			System.out.println("Maximum of 8 players. Game already full.");

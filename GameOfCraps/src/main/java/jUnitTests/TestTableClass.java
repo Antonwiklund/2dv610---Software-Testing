@@ -57,6 +57,19 @@ public class TestTableClass {
 	}
 	
 	/*
+	 * Should return the value of a player's bets.
+	 */
+	@Test
+	public void shouldReturnBetValue() {
+		Player player = mock(Player.class);
+		Table table = new Table();
+		table.placeBets(player);
+		int betsValue = table.getBetsValue();
+		int expected = 21;
+		assertEquals(betsValue, expected);
+	}
+	
+	/*
 	 * Should return an instance of 'Player' from within an ArrayList.
 	 */
 	@Test
