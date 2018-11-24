@@ -7,6 +7,7 @@ Before program complete(finish last):
 -Make sure that various encapsulation is ok.
 -Make sure that absolutely no dependencies exists between classes while they are being tested.
 -Add main method for the real game.
+-Add smoke-tests, and also other kinds of tests.
 
 Classes:
 

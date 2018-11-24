@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import game.Award;
+
 public class TestAwardsClass {
 
 	@BeforeClass
@@ -32,10 +34,10 @@ public class TestAwardsClass {
 
 	@Test
 	public void shouldReturnAwardObject() {
-		Awards awards = new Awards();
+		Award award = new Award();
 		// Create award, and check that it is of the value expected.
-		Awards awardObject = awards.createAward();
-		String actual = awardObject.getValue();
+		award.createAward();
+		String actual = award.getValue();
 		String expected = "Horse";
 		
 		assertEquals(actual, expected);
