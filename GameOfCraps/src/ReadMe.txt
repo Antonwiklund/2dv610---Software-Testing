@@ -1,6 +1,13 @@
 'X' after a class or method, means that this functionality has now been implemented.
 'Y' after a class or method, means that this functionality is currently being worked on/planned, in order to be implemented.
 
+Before program complete(finish last):
+-Separate test-program from real program. Real program should have private methods.
+-Add complete javaDoc.
+-Make sure that various encapsulation is ok.
+-Make sure that absolutely no dependencies exists between classes while they are being tested.
+-Add main method for the real game.
+
 Classes:
 
 Players class = 
@@ -8,27 +15,31 @@ Players class =
 #add output related to when players receives awards. Y
 #playerCurrentResult(). X
 #class for adding the awards objects to an array which each player has.
+#Player leaves table - brings awards with him/herself. New player joins.
 
 Awards class =
-#Award players a result after every round - which is added to Table.currentStandings().
-#Give best players special prize(should be some kind of object).
+#Create award object. Y
+#Add award object to array. Y
+#Calculate what kind of awards that should be given, and to who.
 
 Table class =
 #welcomeToTable - welcome console-UI. Choose how many players that will play. Create array according to this. X
 #importPlayer(Player player) - mock - imports player to the Table, adds into an array. X
 #getPlayerArray() X
 #beginTurn() - the game itself - Y
-#playerBet(Player player) - player places a bet for result of two dice-throws. Y
+#playerBet(Player player) - player places a bet for result of two dice-throws. X
 #rollDice() X
-#currentStandings() - loop array and print players results.
+#Provide players with a result after every round - which is added to a resultArray.
+#currentStandings() - loop resultArray and print players results. Y
+#process awards for round.
+#newPlayerJoins(Player player) 
 #wipeTable() - last
 #gameFinished() - last
 #printFinalResult() - last
-#newPlayerJoins(Player player) 
 
 Audience class =
-#Audience can bet on who to win. - occurs immediately prior to round begins.
-#Audience can give Objects to the players, like awards.
+#Audience can bet on who to win. - occurs immediately prior to round begins. 
+#Audience can give Objects to the players, like awards. 
 
 Additional implementations:
 #Add choice for playing with Real-time betting(freeze game until bet entered for player who wants to)
@@ -37,9 +48,6 @@ Additional implementations:
 
 JustForFun class =
 #Provide functionality for croupier to hack the game. The croupier pre-sets the values the dices will get. 
-#Hackers enter system to make use of weak point. Steals the players awards, and afterwards freezes the system for 10 seconds to get away.
-#Police chase hackers, player gets choice to roll dice and guess number. If correct number is guessed, hackers are caught and awards returned. If wrong hackers call system.exit() on game.
-#Harden the system-flaw that allows hack to occur. Stop bufferoverflow from being possible.
 #If player is of age 100+ and wins three times in a row, has heartattack and dies, and is removed from game.
 
 

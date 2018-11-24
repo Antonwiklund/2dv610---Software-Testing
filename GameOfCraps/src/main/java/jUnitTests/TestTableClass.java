@@ -5,6 +5,7 @@ import static org.mockito.Mockito.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -29,7 +30,7 @@ public class TestTableClass {
 
 	@Before
 	public void setUp() throws Exception {
-		System.out.println("\nTest starts.");
+		System.out.println("\nTest starts.\n");
 	}
 	
 	@After
@@ -61,20 +62,46 @@ public class TestTableClass {
 	 */
 	@Test
 	public void shouldReturnBetValue() {
-		Player player1 = mock(Player.class);
-		Player player2 = mock(Player.class);
+		Player player1 = new playerStub();
+		Player player2 = new playerStub();
 		Table table = new Table();
-		//add player to array:
+		//add playerStubs to array:
 		table.importPlayer(player1);
 		table.importPlayer(player2);
 		ArrayList<Player> playerArray = table.getPlayerArray();
 		//send array to loop, for bets to be placed.		
 		table.placeBets(playerArray);
+		//Return bets to check they are correct.
 		int betsValuePlayerOne = table.getBetsValue(playerArray.get(0));
-		int betsValuePlayerTwo = table.getBetsValue(playerArray.get(0));
-		int expected = 21;
+		int betsValuePlayerTwo = table.getBetsValue(playerArray.get(1));
+		int expected = 20;
 		assertEquals(betsValuePlayerOne + betsValuePlayerTwo, expected);
 	}
+	
+	/*
+	 * Stub for Player.
+	 */
+	class playerStub extends Player {
+		int betOne;
+		int betTwo;
+		
+		public void setBetOne() {
+			this.betOne = 5;
+		}
+		
+		public void setBetTwo() {
+			this.betTwo = 5;
+		}
+		
+		public int getBetOne() {
+			return betOne;
+		}
+		
+		public int getBetTwo() {
+			return betTwo;
+		}
+	}
+	
 	
 	/*
 	 * Should return an instance of 'Player' from within an ArrayList.
@@ -83,9 +110,10 @@ public class TestTableClass {
 	public void shouldReturnAnInstanceOfPlayer() {
 		Player player = mock(Player.class);
 		Table table = new Table();
-		
+		// Import mocked player-class.
 		table.importPlayer(player);
 		ArrayList<Player> playerArray = table.getPlayerArray();
+		// Check that imported player-class has been added to array.
 		Boolean actual = playerArray.get(0) instanceof Player;
 		
 		assertTrue(actual);

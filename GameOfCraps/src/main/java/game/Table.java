@@ -22,7 +22,7 @@ public class Table {
 	 */
 	public int welcomeToTable() throws IOException {
 
-		System.out.println("Welcome to this dicegame."
+		System.out.println("Welcome to this dicegame.\n"
 				+ "\n In order to choose between the options below, enter the respective number."
 				+ "\n 1) ReadMe introduction to program." + "\n 2) Enter number of players, and start the game."
 				+ "\n 3) Quit game.");
@@ -103,6 +103,7 @@ public class Table {
 		}
 		playerArray.add(player);
 	}
+		
 	
 	/*
 	 * return the playerArray.

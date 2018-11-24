@@ -83,25 +83,5 @@ public class Player {
 		return currentTotalResult;
 	}
 	
-	public void setBetOne() {
-		Scanner in = new Scanner(System.in);
-		System.out.println("Enter bet one:");
-		this.betOne = in.nextInt();
-		in.close();
-	}
 	
-	public void setBetTwo() {
-		Scanner in = new Scanner(System.in);
-		System.out.println("Enter bet two:");
-		this.betTwo = in.nextInt();
-		in.close();
-	}
-	
-	public int getBetOne() {
-		return betOne;
-	}
-	
-	public int getBetTwo() {
-		return betTwo;
-	}
 }
