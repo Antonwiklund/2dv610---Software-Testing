@@ -1,8 +1,6 @@
 package game;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
@@ -18,13 +16,14 @@ public class Table {
 	 * Starts the game. Provides a console-UI, in which it can be chosen how many
 	 * players should play. Also creates a fixed-sized array in response to this.
 	 */
-	public Player[] welcomeToTable() throws IOException {
+	public int welcomeToTable() throws IOException {
 
 		System.out.println("Welcome to this dicegame."
 				+ "\n In order to choose between the options below, enter the respective number."
 				+ "\n 1) ReadMe introduction to program." + "\n 2) Enter number of players, and start the game."
 				+ "\n 3) Quit game.");
 
+		int numberOfPlayers = 0;
 		int tries = 0;
 		Scanner in = new Scanner(System.in);
 		int choice = in.nextInt();
@@ -44,7 +43,6 @@ public class Table {
 
 		// This part of the code reads the ReadMe.txt, and outputs it to the console.
 		Scanner in2 = new Scanner(System.in);
-		Player[] playerArray = null;
 		if (choice == 1) {
 			String source = "/home/anton/eclipse-workspace/GameOfCraps/src/ReadMe.txt";
 			String nextLine;
@@ -77,16 +75,16 @@ public class Table {
 		if (choice == 2) {
 			System.out.println("Enter number of players:");
 			Scanner in3 = new Scanner(System.in);
-			int numberOfPlayers = in3.nextInt();
+			int numberOfPlayersScanned = in3.nextInt();
 			in3.close();
-			playerArray = new Player[numberOfPlayers];
+			numberOfPlayers = numberOfPlayersScanned;
 		} else if (choice == 3) {
 			System.out.println("Game shutting down.");
 			System.exit(1);
 		}
 		in.close();
 		in2.close();
-		return playerArray;
+		return numberOfPlayers;
 	}
 
 	/*

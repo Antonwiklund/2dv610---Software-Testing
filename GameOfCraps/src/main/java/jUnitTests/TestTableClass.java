@@ -1,8 +1,10 @@
 package jUnitTests;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -36,22 +38,37 @@ public class TestTableClass {
 	}
 	
 	/*
-	 * Should return an 'int'-array. The length of which, amounts to the total number of players.
+	 * Should return an 'int' specifying the total number of players.
 	 */
 	@Test
 	public void shouldReturnNumberOfPlayers() {
 		Table table = new Table();
-		Player[] playersArray = null;
+		int numberOfPlayers = 0;
 		try {
-			playersArray = table.welcomeToTable();
+			numberOfPlayers = table.welcomeToTable();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		int actual = playersArray.length; 
+		int actual = numberOfPlayers; 
 		int expected = 4;
 		assertEquals(actual, expected);
+	}
+	
+	/*
+	 * Should return an instance of 'Player' from within an ArrayList.
+	 */
+	@Test
+	public void shouldReturnAnInstanceOfPlayer() {
+		Player player = mock(Player.class);
+		Table table = new Table();
+		
+		table.importPlayer(player);
+		ArrayList<Player> playerArray = table.getPlayerArray();
+		Boolean actual = playerArray.get(0) instanceof Player;
+		
+		assertTrue(actual);
 	}
 	
 	//Dice should return a value from 1-6.
