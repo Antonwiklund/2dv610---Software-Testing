@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class DiceGame {
 
+	ArrayList<ArrayList> mergedArray;
+	
 	/*
 	 * Provides an 'int' value from 1-6.
 	 */
@@ -14,4 +16,11 @@ public class DiceGame {
 		return diceValue;
 	}
 	
+	public void importMergedArray(ArrayList<ArrayList> mergedArray) {
+		this.mergedArray = mergedArray;
+	}
+	
+	public ArrayList<ArrayList> endGame() {
+		return this.mergedArray;
+	}
 }

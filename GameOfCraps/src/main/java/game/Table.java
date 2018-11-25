@@ -151,10 +151,22 @@ public class Table {
 			return mergedArray;
 	}
 	
-
+	/*
+	 * Returns instance of DiceGame.
+	 */
 	public DiceGame getGame() {
 		DiceGame diceGame = new DiceGame();
 		return diceGame;
 	}
-
+	
+	/*
+	 * Starts, and eventually ends, the game.
+	 */
+	public void setupGame() {
+		DiceGame diceGame = new DiceGame();
+		diceGame.importMergedArray(mergedArray);
+		
+		this.mergedArray = diceGame.endGame();
+	}
+	
 }

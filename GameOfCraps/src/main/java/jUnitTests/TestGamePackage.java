@@ -138,14 +138,14 @@ public class TestGamePackage {
 	}
 	
 	/*
-	 * 
+	 * should assert that setup game with the mergedArray is successful.
 	 */
 	@Test
 	public void shouldSendMergedArrayForSetupOfGame() {
 		Table table = new Table();
 		DiceGame mockGame = mock(DiceGame.class);
 		ArrayList<ArrayList> mergedArray = table.mergeArrays();
-		table.setupGame(mergedArray);
+		table.setupGame();
 		when(mockGame.endGame()).thenReturn(mergedArray);
 		ArrayList<ArrayList> actual = mockGame.endGame();
 		assertEquals(actual, mergedArray);
