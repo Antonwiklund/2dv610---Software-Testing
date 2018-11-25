@@ -59,52 +59,7 @@ public class TestGamePackage {
 		int expected = 4;
 		assertEquals(actual, expected);
 	}
-	
-	/*
-	 * Should return the value of a player's bets.
-	 */
-	@Test
-	public void shouldReturnBetValue() {
-		Player player1 = new playerStub();
-		Player player2 = new playerStub();
-		Table table = new Table();
-		//add playerStubs to array:
-		table.importPlayer(player1);
-		table.importPlayer(player2);
-		ArrayList<Player> playerArray = table.getPlayerArray();
-		//send array to loop, for bets to be placed.		
-		table.placeBets(playerArray);
-		//Return bets to check they are correct.
-		int betsValuePlayerOne = table.getBetsValue(playerArray.get(0));
-		int betsValuePlayerTwo = table.getBetsValue(playerArray.get(1));
-		int expected = 20;
-		assertEquals(betsValuePlayerOne + betsValuePlayerTwo, expected);
-	}
-	
-	/*
-	 * Stub for Player.
-	 */
-	class playerStub extends Player {
-		int betOne;
-		int betTwo;
 		
-		public void setBetOne() {
-			this.betOne = 5;
-		}
-		
-		public void setBetTwo() {
-			this.betTwo = 5;
-		}
-		
-		public int getBetOne() {
-			return betOne;
-		}
-		
-		public int getBetTwo() {
-			return betTwo;
-		}
-	}
-	
 	
 	/*
 	 * Should return an instance of 'Player' from within an ArrayList.
@@ -120,22 +75,6 @@ public class TestGamePackage {
 		Boolean actual = playerArray.get(0) instanceof Player;
 		
 		assertTrue(actual);
-	}
-	
-	//Dice should return a value from 1-6.
-	@Test
-	public void checkThatDiceFunctionsCorrectly() {
-		Table table = new Table();
-		int actual = table.rollDice();
-		int expected;
-
-		for (expected = 6; expected >= actual; expected--) {
-			if (actual == expected && actual > 0 && actual < 7) {
-				break;
-			}
-		}
-		
-		assertEquals(actual, expected);
 	}
 	
 	/*	
@@ -196,6 +135,20 @@ public class TestGamePackage {
 		DiceGame test = table.getGame();
 		Boolean testIfTrue = test instanceof DiceGame;
 		assertTrue(testIfTrue);
+	}
+	
+	/*
+	 * 
+	 */
+	@Test
+	public void shouldSendMergedArrayForSetupOfGame() {
+		Table table = new Table();
+		DiceGame mockGame = mock(DiceGame.class);
+		ArrayList<ArrayList> mergedArray = table.mergeArrays();
+		table.setupGame(mergedArray);
+		when(mockGame.endGame()).thenReturn(mergedArray);
+		ArrayList<ArrayList> actual = mockGame.endGame();
+		assertEquals(actual, mergedArray);
 	}
 	
 	//TESTSUITE FOR PLAYERCLASS
@@ -267,18 +220,65 @@ public class TestGamePackage {
 	
 	//TESTSUITE FOR GAMECLASS
 	
+	/*
+	 * Should return the value of a player's bets.
+	 */
+	@Test
+	public void shouldReturnBetValue() {
+		Player player1 = new playerStub();
+		Player player2 = new playerStub();
+		Table table = new Table();
+		//add playerStubs to array:
+		table.importPlayer(player1);
+		table.importPlayer(player2);
+		ArrayList<Player> playerArray = table.getPlayerArray();
+		//send array to loop, for bets to be placed.		
+		table.placeBets(playerArray);
+		//Return bets to check they are correct.
+		int betsValuePlayerOne = table.getBetsValue(playerArray.get(0));
+		int betsValuePlayerTwo = table.getBetsValue(playerArray.get(1));
+		int expected = 20;
+		assertEquals(betsValuePlayerOne + betsValuePlayerTwo, expected);
+	}
 	
+	/*
+	 * Stub for Player.
+	 */
+	class playerStub extends Player {
+		int betOne;
+		int betTwo;
+		
+		public void setBetOne() {
+			this.betOne = 5;
+		}
+		
+		public void setBetTwo() {
+			this.betTwo = 5;
+		}
+		
+		public int getBetOne() {
+			return betOne;
+		}
+		
+		public int getBetTwo() {
+			return betTwo;
+		}
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	//Dice should return a value from 1-6.
+	@Test
+	public void checkThatDiceFunctionsCorrectly() {
+		DiceGame game = new DiceGame();
+		int actual = game.rollDice();
+		int expected;
 
+		for (expected = 6; expected >= actual; expected--) {
+			if (actual == expected && actual > 0 && actual < 7) {
+				break;
+			}
+		}
+		
+		assertEquals(actual, expected);
+	}
+	
 }

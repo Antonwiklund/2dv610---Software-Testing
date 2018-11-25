@@ -28,14 +28,15 @@ Table class =
 #getResultArray() X
 #getAwardArray() X
 #mergeArray() X
-#enterGame(mergedArray)
+#returnGame(); X - unnecessary test?
+#setupGame(mergedArray)
 #currentResults() - loop resultArray and print players results. Y
 #currentAwards() - loop awardsArray and print players awards. Y 
 #wipeTable() - last
 #gameFinished() - last
 
 
-Game class:
+DiceGame class:
 #beginRound() - the game itself - Y
 - playerBet(Player player) - player places a bet for result of two dice-throws. X
 - Dice should roll two times, for each player - result of dices only valid for current player.
