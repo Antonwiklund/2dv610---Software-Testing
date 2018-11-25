@@ -151,6 +151,8 @@ public class Table {
 			return mergedArray;
 	}
 	
+	
+	
 	/*
 	 * Provides an 'int' value from 1-6.
 	 */
@@ -158,6 +160,11 @@ public class Table {
 		Random random = new Random();
 		int diceValue = 1 + random.nextInt(6);
 		return diceValue;
+	}
+
+	public DiceGame getGame() {
+		DiceGame diceGame = new DiceGame();
+		return diceGame;
 	}
 
 }

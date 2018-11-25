@@ -12,6 +12,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.mockito.stubbing.OngoingStubbing;
 
 import game.Award;
 import game.DiceGame;
@@ -192,10 +193,8 @@ public class TestGamePackage {
 	@Test
 	public void shouldReturnInstanceOfTheGame() {
 		Table table = new Table();
-		DiceGame test = mock(DiceGame.class);
-		Table diceGame = mock(Table.class);
-		DiceGame test2 = when(diceGame.getGame()).thenReturn(test);
-		Boolean testIfTrue = test2 instanceof DiceGame;
+		DiceGame test = table.getGame();
+		Boolean testIfTrue = test instanceof DiceGame;
 		assertTrue(testIfTrue);
 	}
 	
