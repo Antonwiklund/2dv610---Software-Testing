@@ -22,19 +22,20 @@ Awards class =
 
 Table class =
 #welcomeToTable - welcome console-UI. Choose how many players that will play. Create array according to this. X
-#welcomBackToTable - when back from game - functionality for printing results, awards, wiping results/awards, and quit game.
+#welcomBackToTable(mergeArray) - when back from game - functionality for printing results, awards, wiping results/awards, and quit game.
 #importPlayer(Player player) - mock - imports player to the Table, adds into an array. X
 #getPlayerArray() X
-#getResultArray() 
-#getAwardArray() 
-#mergeArray() 
+#getResultArray() X
+#getAwardArray() X
+#mergeArray() X
+#enterGame(mergedArray)
 #currentResults() - loop resultArray and print players results. Y
 #currentAwards() - loop awardsArray and print players awards. Y 
 #wipeTable() - last
 #gameFinished() - last
 
+
 Game class:
-#enterGame(allArraysArray(results,players,awards))
 #beginRound() - the game itself - Y
 - playerBet(Player player) - player places a bet for result of two dice-throws. X
 - Dice should roll two times, for each player - result of dices only valid for current player.

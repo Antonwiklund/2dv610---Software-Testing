@@ -185,6 +185,17 @@ public class TestGamePackage {
 		assertEquals(actual, expected);
 	}
 	
+	/*
+	 * Should return an instance of the game.
+	 */
+	@Test
+	public void shouldReturnInstanceOfTheGame() {
+		Table table = new Table();
+		DiceGame diceGame = mock(DiceGame.class);
+		Boolean testIfTrue = diceGame instanceof DiceGame;
+		assertTrue(testIfTrue);
+	}
+	
 	//TESTSUITE FOR PLAYERCLASS
 	
 	/*
