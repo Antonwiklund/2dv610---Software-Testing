@@ -141,6 +141,9 @@ public class Table {
 		return resultsArray;
 	}
 	
+	/*
+	 * Merges playersArray,awardsArray,resultsArray.
+	 */
 	public ArrayList<ArrayList> mergeArrays() {
 			mergedArray.add(playerArray);
 			mergedArray.add(awardsArray);

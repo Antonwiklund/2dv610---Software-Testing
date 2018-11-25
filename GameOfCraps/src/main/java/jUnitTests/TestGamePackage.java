@@ -136,6 +136,9 @@ public class TestGamePackage {
 		assertEquals(actual, expected);
 	}
 	
+	/*	
+	 * should only return maxsize array.
+	 */
 	@Test
 	public void shouldNotAddPlayerToArray() {
 		Player player = new playerStub();
@@ -148,6 +151,9 @@ public class TestGamePackage {
 		assertEquals(actual, expected);
 	}
 	
+	/*
+	 * should return an awardsArray.
+	 */
 	@Test
 	public void shouldReturnAwardsArray() {
 		Table table = new Table();
@@ -156,6 +162,9 @@ public class TestGamePackage {
 		assertEquals(actual, expected);
 	}
 	
+	/*
+	 * Should return an resultsArray.
+	 */
 	@Test
 	public void shouldReturnResultsArray() {
 		Table table = new Table();
@@ -164,12 +173,12 @@ public class TestGamePackage {
 		assertEquals(actual, expected);
 	}
 	
+	/*
+	 * Should return an array which merges playerArray,resultsArray,awardArray.
+	 */
 	@Test
 	public void shouldReturnMergedArrays() {
 		Table table = new Table();
-		ArrayList<Integer> resultList = table.getResultsArray();
-		ArrayList<Player> playerList = table.getPlayerArray();
-		ArrayList<Award> awardsList = table.getAwardsArray();
 		ArrayList<ArrayList> mergedArray = table.mergeArrays();
 		int actual = mergedArray.size();
 		int expected = 3;
