@@ -220,7 +220,7 @@ public class TestGamePackage {
 	 * should return an 'object' of Award-class.
 	 */
 	@Test
-	public void shouldReturnAwardObject() {
+	public void shouldReturnCorrectAwardObject() {
 		Award award = new Award();
 		// Create award, and check that it is of the value expected.
 		String actual = award.getValue();
