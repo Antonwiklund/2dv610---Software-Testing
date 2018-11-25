@@ -164,6 +164,18 @@ public class TestGamePackage {
 		assertEquals(actual, expected);
 	}
 	
+	@Test
+	public void shouldReturnMergedArrays() {
+		Table table = new Table();
+		ArrayList<Integer> resultList = table.getResultsArray();
+		ArrayList<Player> playerList = table.getPlayerArray();
+		ArrayList<Award> awardsList = table.getAwardsArray();
+		ArrayList<ArrayList> mergedArray = table.mergeArrays(playerList,awardsList,resultList);
+		int actual = mergedArray.size();
+		int expected = 3;
+		assertEquals(actual, expected);
+	}
+	
 	//TESTSUITE FOR PLAYERCLASS
 	
 	/*
@@ -228,6 +240,8 @@ public class TestGamePackage {
 		
 		assertEquals(actual, expected);
 	}
+	
+	
 	
 	//TESTSUITE FOR GAMECLASS
 	
