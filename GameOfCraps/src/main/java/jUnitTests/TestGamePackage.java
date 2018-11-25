@@ -156,6 +156,14 @@ public class TestGamePackage {
 		assertEquals(actual, expected);
 	}
 	
+	@Test
+	public void shouldReturnResultsArray() {
+		Table table = new Table();
+		ArrayList<Integer> actual = table.getResultsArray();
+		ArrayList<Integer> expected = new ArrayList<Integer>();
+		assertEquals(actual, expected);
+	}
+	
 	//TESTSUITE FOR PLAYERCLASS
 	
 	/*

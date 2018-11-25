@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Table {
 
-	// ArrayList for players at table.
+	// ArrayList's for players at table.
 	ArrayList<Player> playerArray = new ArrayList<Player>();
 	ArrayList<Award> awardsArray = new ArrayList<Award>();
 	
