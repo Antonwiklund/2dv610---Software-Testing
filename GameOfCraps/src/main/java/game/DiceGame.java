@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class DiceGame {
 
+	@SuppressWarnings("rawtypes")
 	ArrayList<ArrayList> mergedArray;
 	
 	/*
@@ -16,10 +17,18 @@ public class DiceGame {
 		return diceValue;
 	}
 	
+	/*
+	 * Imports, from table, the mergedArray.
+	 */
+	@SuppressWarnings("rawtypes")
 	public void importMergedArray(ArrayList<ArrayList> mergedArray) {
 		this.mergedArray = mergedArray;
 	}
 	
+	/*
+	 * Ends the game, and returns the mergedArray.
+	 */
+	@SuppressWarnings("rawtypes")
 	public ArrayList<ArrayList> endGame() {
 		return this.mergedArray;
 	}

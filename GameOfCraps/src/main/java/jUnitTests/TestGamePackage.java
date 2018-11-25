@@ -5,14 +5,12 @@ import static org.mockito.Mockito.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.mockito.stubbing.OngoingStubbing;
 
 import game.Award;
 import game.DiceGame;
@@ -117,6 +115,7 @@ public class TestGamePackage {
 	/*
 	 * Should return an array which merges playerArray,resultsArray,awardArray.
 	 */
+	@SuppressWarnings("rawtypes")
 	@Test
 	public void shouldReturnMergedArrays() {
 		Table table = new Table();
@@ -140,6 +139,7 @@ public class TestGamePackage {
 	/*
 	 * should assert that setup game with the mergedArray is successful.
 	 */
+	@SuppressWarnings("rawtypes")
 	@Test
 	public void shouldSendMergedArrayForSetupOfGame() {
 		Table table = new Table();

@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Table {
@@ -13,6 +12,7 @@ public class Table {
 	ArrayList<Player> playerArray = new ArrayList<Player>();
 	ArrayList<Award> awardsArray = new ArrayList<Award>();
 	ArrayList<Integer> resultsArray = new ArrayList<Integer>();
+	@SuppressWarnings("rawtypes")
 	ArrayList<ArrayList> mergedArray = new ArrayList<ArrayList>();
 	
 	/*
@@ -144,6 +144,7 @@ public class Table {
 	/*
 	 * Merges playersArray,awardsArray,resultsArray.
 	 */
+	@SuppressWarnings("rawtypes")
 	public ArrayList<ArrayList> mergeArrays() {
 			mergedArray.add(playerArray);
 			mergedArray.add(awardsArray);
