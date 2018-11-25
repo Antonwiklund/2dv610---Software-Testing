@@ -11,6 +11,7 @@ public class Table {
 
 	// ArrayList for players at table.
 	ArrayList<Player> playerArray = new ArrayList<Player>();
+	ArrayList<Award> awardsArray = new ArrayList<Award>();
 	
 	/*
 	 * Starts the game. Provides a console-UI, in which it can be chosen how many
@@ -122,6 +123,13 @@ public class Table {
 	 */
 	public ArrayList<Player> getPlayerArray() {
 		return playerArray;
+	}
+	
+	/*
+	 * return the awardsArray.
+	 */
+	public ArrayList<Award> getAwardsArray() {
+		return awardsArray;
 	}
 	
 	/*
