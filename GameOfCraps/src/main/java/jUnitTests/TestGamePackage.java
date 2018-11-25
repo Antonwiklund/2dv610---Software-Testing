@@ -14,6 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import game.Award;
+import game.DiceGame;
 import game.Player;
 import game.Table;
 
@@ -191,8 +192,10 @@ public class TestGamePackage {
 	@Test
 	public void shouldReturnInstanceOfTheGame() {
 		Table table = new Table();
-		DiceGame diceGame = mock(DiceGame.class);
-		Boolean testIfTrue = diceGame instanceof DiceGame;
+		DiceGame test = mock(DiceGame.class);
+		Table diceGame = mock(Table.class);
+		DiceGame test2 = when(diceGame.getGame()).thenReturn(test);
+		Boolean testIfTrue = test2 instanceof DiceGame;
 		assertTrue(testIfTrue);
 	}
 	
