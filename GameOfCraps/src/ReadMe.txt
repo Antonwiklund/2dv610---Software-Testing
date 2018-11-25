@@ -13,10 +13,8 @@ Classes:
 
 Players class = 
 #create object for each player that is going to join. X
-#add output related to when players receives awards. Y
+#add output related to when players receives awards.
 #playerCurrentResult(). X
-#class for adding the awards objects to an array which each player has.
-#Player leaves table - brings awards with him/herself. New player joins.
 
 Awards class =
 #Create award object. X
@@ -24,28 +22,38 @@ Awards class =
 
 Table class =
 #welcomeToTable - welcome console-UI. Choose how many players that will play. Create array according to this. X
+#welcomBackToTable - when back from game - functionality for printing results, awards, wiping results/awards, and quit game.
 #importPlayer(Player player) - mock - imports player to the Table, adds into an array. X
 #getPlayerArray() X
-#beginTurn() - the game itself - Y
-#playerBet(Player player) - player places a bet for result of two dice-throws. X
-#rollDice() X
-#Provide players with a result after every round - which is added to a resultArray.
-#currentStandings() - loop resultArray and print players results. Y
-#process awards for round.
-#Add award object to array. Y
-#newPlayerJoins(Player player) 
+#getResultArray() 
+#getAwardArray() 
+#mergeArray() 
+#currentResults() - loop resultArray and print players results. Y
+#currentAwards() - loop awardsArray and print players awards. Y 
 #wipeTable() - last
 #gameFinished() - last
-#printFinalResult() - last
+
+Game class:
+#enterGame(allArraysArray(results,players,awards))
+#beginRound() - the game itself - Y
+- playerBet(Player player) - player places a bet for result of two dice-throws. X
+- Dice should roll two times, for each player - result of dices only valid for current player.
+- If player gets correct - can choose award. Also add '10' to total result. Also can place new bet, and roll dices again.
+- Failing bet gives -1 result.
+#rollDice() X
+#checkValueOfDicesAgainstPlayerBets(). Y
+#Add award object to array. Y
+#Process awards for round. Y
+#newPlayerJoins(Player player)
+#Player leaves table - brings his/her awardsArray with him/herself. New player joins.
+#ReturnToTable() - enough if one player wants to return.
 
 Audience class =
 #Audience can bet on who to win. - occurs immediately prior to round begins. 
 #Audience can give Objects to the players, like awards. 
 
 Additional implementations:
-#Add choice for playing with Real-time betting(freeze game until bet entered for player who wants to)
-#Various multipliers - add money implementation, so players can choose to play with money. Also add currency exchange.
-#If player gets certain result, player's turn is extended.
+#add game version with money implementation, so players can choose to play with money. Also add currency exchange.
 
 JustForFun class =
 #Provide functionality for croupier to hack the game. The croupier pre-sets the values the dices will get. 
@@ -57,6 +65,7 @@ Gameflow - console UI =
 #First welcome players to game.
 -Ask how many players.
 -Add the players to the Table(), one at a time.
+-Start the game.
 
 #After first round:
 -Print results of round.
@@ -67,4 +76,7 @@ Gameflow - console UI =
 #After round when one player wins:
 -Print results.
 -Hand out awards.
+
+#When back to table:
+-Provide choice for printing results/awards.
 -Wipe all info, and System.out 'goodbye'.

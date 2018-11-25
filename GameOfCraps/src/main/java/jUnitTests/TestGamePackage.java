@@ -136,6 +136,26 @@ public class TestGamePackage {
 		assertEquals(actual, expected);
 	}
 	
+	@Test
+	public void shouldNotAddPlayerToArray() {
+		Player player = new playerStub();
+		Table table = new Table();
+		for (int i = 0; i < 12; i++) {
+			table.importPlayer(player);
+		}
+		int actual = table.getPlayerArray().size();
+		int expected = 8;
+		assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void shouldReturnAwardsArray() {
+		Table table = new Table();
+		ArrayList<Award> actual = table.getAwardsArray();
+		ArrayList<Award> expected = new ArrayList<Award>();
+		assertEquals(actual, expected);
+	}
+	
 	//TESTSUITE FOR PLAYERCLASS
 	
 	/*
@@ -168,6 +188,24 @@ public class TestGamePackage {
 		assertEquals(10, actual);
 	}
 	
+	@Test
+	public void shouldSetAndReturnBetValue1() {
+		Player player = new Player();
+		player.setBetOne();
+		int actual = player.getBetOne();
+		int expected = 4;
+		assertEquals(actual, expected);
+	}
+	
+	@Test
+	public void shouldSetAndReturnBetValue2() {
+		Player player = new Player();
+		player.setBetTwo();
+		int actual = player.getBetTwo();
+		int expected = 4;
+		assertEquals(actual, expected);
+	}
+	
 	//TESTSUITE FOR AWARDCLASS
 	
 	/*
@@ -182,5 +220,21 @@ public class TestGamePackage {
 		
 		assertEquals(actual, expected);
 	}
+	
+	//TESTSUITE FOR GAMECLASS
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

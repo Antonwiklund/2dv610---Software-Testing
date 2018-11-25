@@ -9,10 +9,6 @@ import java.util.Scanner;
 
 public class Table {
 
-	public static void main(String[] args) {
-
-	}
-
 	// ArrayList for players at table.
 	ArrayList<Player> playerArray = new ArrayList<Player>();
 	
