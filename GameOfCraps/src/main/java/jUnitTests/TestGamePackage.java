@@ -170,7 +170,7 @@ public class TestGamePackage {
 		ArrayList<Integer> resultList = table.getResultsArray();
 		ArrayList<Player> playerList = table.getPlayerArray();
 		ArrayList<Award> awardsList = table.getAwardsArray();
-		ArrayList<ArrayList> mergedArray = table.mergeArrays(playerList,awardsList,resultList);
+		ArrayList<ArrayList> mergedArray = table.mergeArrays();
 		int actual = mergedArray.size();
 		int expected = 3;
 		assertEquals(actual, expected);

@@ -13,6 +13,7 @@ public class Table {
 	ArrayList<Player> playerArray = new ArrayList<Player>();
 	ArrayList<Award> awardsArray = new ArrayList<Award>();
 	ArrayList<Integer> resultsArray = new ArrayList<Integer>();
+	ArrayList<ArrayList> mergedArray = new ArrayList<ArrayList>();
 	
 	/*
 	 * Starts the game. Provides a console-UI, in which it can be chosen how many
@@ -138,6 +139,13 @@ public class Table {
 	 */
 	public ArrayList<Integer> getResultsArray() {
 		return resultsArray;
+	}
+	
+	public ArrayList<ArrayList> mergeArrays() {
+			mergedArray.add(playerArray);
+			mergedArray.add(awardsArray);
+			mergedArray.add(resultsArray);
+			return mergedArray;
 	}
 	
 	/*
